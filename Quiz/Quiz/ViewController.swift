@@ -48,6 +48,10 @@ class ViewController: UIViewController {
     }
     
     func foo() -> String {
+        
+        var num = [1,4,9]
+        num.sort(by: { (l, r) -> Bool in l<r })
+        
         let range = 0...10
         for i in range{
             print (i)
@@ -100,6 +104,14 @@ class ViewController: UIViewController {
         }
         
         print (name)
+        
+        let bar = 1...3
+        switch 1 {
+            case 0...8:
+                print("c")
+        default:
+            print ("default")
+        }
     }
     
 }
