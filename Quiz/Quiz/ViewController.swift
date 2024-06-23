@@ -38,11 +38,68 @@ class ViewController: UIViewController {
     
     @IBAction func showAnswer(_ sender: UIButton) {
         let answer: String = answers[currentQuestionIndex]
-        answerLabel.text = answer
+//        answerLabel.text = answer
+        answerLabel.text = foo()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         questionLabel.text = questions[currentQuestionIndex]
     }
+    
+    func foo() -> String {
+        let range = 0...10
+        for i in range{
+            print (i)
+        }
+        
+        let words = ["hello", "darkness", "my", "old", "friend"]
+        for word in words {
+            print (word)
+        }
+        
+        let dict : Dictionary<Int, String>  = [
+            9: "OK",
+            7: "Yes",
+            1: "Maybe"
+        ]
+        for (key,value) in dict {
+            print ("Int \(key) : \(value)")
+        }
+        
+        // Interesting... compile time enforcing null
+        let foo : String? = nil //null wasn't good enough??
+        
+        let type : Int? = 9
+        
+        if let r1 = type {
+//            return String(r1)
+            return String(type!)
+        }
+        else {
+            return "whoops"
+        }
+    }
+    
+    
+    enum RGB {
+        case RED
+        case BLUE
+        case GREEN
+    }
+    
+    func foob(ocean: RGB) {
+        let name : String
+        switch ocean {
+        case .RED:
+            name = "Burgungy"
+        case .BLUE:
+                name = "Ocean"
+        case .GREEN:
+                name = "Cholorphyll"
+        }
+        
+        print (name)
+    }
+    
 }
